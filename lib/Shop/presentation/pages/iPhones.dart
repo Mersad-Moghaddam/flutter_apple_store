@@ -8,7 +8,7 @@ class IphonePage extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text(
-          "IPhone Page",
+          "iPhone Page",
           style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 30,

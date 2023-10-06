@@ -48,6 +48,7 @@ class _BottomNavState extends State<BottomNav> {
                         isSelectedWatch = true;
                         isSelectedIphone = false;
                         isSelectedMacbook = false;
+                        selectedIndex = 1;
                       });
                     },
                     child: Transform.rotate(
@@ -67,7 +68,7 @@ class _BottomNavState extends State<BottomNav> {
                             height: 4,
                           ),
                           AnimatedContainer(
-                            duration: const Duration(microseconds: 500),
+                            duration: const Duration(microseconds: 5000),
                             height: 3,
                             width: 50,
                             color:
@@ -86,6 +87,7 @@ class _BottomNavState extends State<BottomNav> {
                         isSelectedWatch = false;
                         isSelectedIphone = false;
                         isSelectedMacbook = true;
+                        selectedIndex = 0;
                       });
                     },
                     child: Transform.rotate(
@@ -105,7 +107,7 @@ class _BottomNavState extends State<BottomNav> {
                             height: 4,
                           ),
                           AnimatedContainer(
-                            duration: const Duration(microseconds: 500),
+                            duration: const Duration(microseconds: 5000),
                             height: 3,
                             width: 50,
                             color:
@@ -124,6 +126,7 @@ class _BottomNavState extends State<BottomNav> {
                         isSelectedWatch = false;
                         isSelectedIphone = true;
                         isSelectedMacbook = false;
+                        selectedIndex = 2;
                       });
                     },
                     child: Transform.rotate(
@@ -143,7 +146,7 @@ class _BottomNavState extends State<BottomNav> {
                             height: 4,
                           ),
                           AnimatedContainer(
-                            duration: const Duration(microseconds: 500),
+                            duration: const Duration(microseconds: 5000),
                             height: 3,
                             width: 50,
                             color:
@@ -157,6 +160,15 @@ class _BottomNavState extends State<BottomNav> {
               ],
             ),
           ),
+          Column(
+            children: [
+              Container(
+                height: MediaQuery.sizeOf(context).height,
+                width: MediaQuery.sizeOf(context).width * 75 / 100,
+                child: myPages[selectedIndex],
+              )
+            ],
+          )
         ],
       ),
     );
